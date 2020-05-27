@@ -20,8 +20,9 @@ return [
     ],
     'event_handlers'           => [],
     'websocket'                => [
-        'enable' => false,
+        'enable' => true,
         //'handler' => XxxWebSocketHandler::class,
+        'handler' =>  \App\Handlers\WebSocketHandler::class,
     ],
     'sockets'                  => [],
     'processes'                => [
