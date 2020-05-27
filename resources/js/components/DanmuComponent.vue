@@ -13,6 +13,12 @@
         margin: 0;
         position: relative;
         overflow: hidden;
+
+    }
+    body {
+
+        background: url("http://dzz.lqlovehai.com/index.php?mod=io&op=thumbnail&size=small&path=MmdpaFF1anBKVWpVSHgtN0NOeW0xZnZfRkNPU3l6N3RGUnhxSE9XbmxOSGpIZVVoRmNZUjh0WkhGMlA3UXBOazRpb1B4R1hnWUQ4c1d3");
+
     }
 
     h1, h2 {
@@ -118,14 +124,14 @@
         name: 'danmu',
         data () {
             return {
-                msg: '你好，学院君！',
+                msg: '刘强帅气！！',
                 position: 'top',
                 barrageIsShow: true,
                 currentId: 0,
                 barrageLoop: false,
                 websocket: null,
                 barrageList: [],
-
+                isTrue:false
             }
         },
         mounted(){
@@ -134,6 +140,7 @@
         created () {
             // 初始化 websocket 并定义回调函数
             this.websocket = new WebSocket("ws://swoole.lqlovehai.com/ws");
+            this.isTrue = true;
             this.websocket.onopen = function (event) {
                 console.log("已建立 WebSocket 连接");
             };
@@ -148,6 +155,7 @@
                 console.log("与 WebSocket 通信出错");
             };
             this.websocket.onclose = function (event) {
+                that.isTrue = false
                 console.log("断开 WebSocket 连接");
             };
         },

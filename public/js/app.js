@@ -210,18 +210,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'danmu',
   data: function data() {
     return {
-      msg: '你好，学院君！',
+      msg: '刘强帅气！！',
       position: 'top',
       barrageIsShow: true,
       currentId: 0,
       barrageLoop: false,
       websocket: null,
-      barrageList: []
+      barrageList: [],
+      isTrue: false
     };
   },
   mounted: function mounted() {
@@ -230,6 +237,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     // 初始化 websocket 并定义回调函数
     this.websocket = new WebSocket("ws://swoole.lqlovehai.com/ws");
+    this.isTrue = true;
 
     this.websocket.onopen = function (event) {
       console.log("已建立 WebSocket 连接");
@@ -249,6 +257,7 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     this.websocket.onclose = function (event) {
+      that.isTrue = false;
       console.log("断开 WebSocket 连接");
     };
   },
@@ -301,7 +310,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#danmu[data-v-7ec61d2f] {\n  font-family: \"Avenir\", Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n}\n.stage[data-v-7ec61d2f] {\n  height: 300px;\n  width: 100%;\n  background: #025d63;\n  margin: 0;\n  position: relative;\n  overflow: hidden;\n}\nh1[data-v-7ec61d2f], h2[data-v-7ec61d2f] {\n  font-weight: normal;\n}\nul[data-v-7ec61d2f] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-7ec61d2f] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-7ec61d2f] {\n  color: #42b983;\n}\n.baberrage-stage[data-v-7ec61d2f] {\n  z-index: 5;\n}\n.baberrage-stage .baberrage-item.normal[data-v-7ec61d2f] {\n  color: #FFF;\n}\n.top[data-v-7ec61d2f] {\n  border: 1px solid #66aabb;\n}\n.danmu-control[data-v-7ec61d2f] {\n  position: absolute;\n  margin: 0 auto;\n  width: 100%;\n  bottom: 300px;\n  top: 70%;\n  height: 69px;\n  box-sizing: border-box;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n}\n.danmu-control div[data-v-7ec61d2f] {\n  width: 300px;\n  background: rgba(0, 0, 0, 0.6);\n  padding: 15px;\n  border-radius: 5px;\n  border: 2px solid #8ad9ff;\n}\n.danmu-control input[data-v-7ec61d2f], .danmu-control button[data-v-7ec61d2f], .danmu-control select[data-v-7ec61d2f] {\n  height: 35px;\n  padding: 0;\n  float: left;\n  background: #027fbb;\n  border: 1px solid #CCC;\n  color: #FFF;\n  border-radius: 0;\n  width: 18%;\n  box-sizing: border-box;\n}\n.danmu-control select[data-v-7ec61d2f] {\n  height: 33px;\n  margin-top: 1px;\n  border: 0px;\n  outline: 1px solid #cccccc;\n}\n.danmu-control input[data-v-7ec61d2f] {\n  width: 64%;\n  height: 35px;\n  background: rgba(0, 0, 0, 0.7);\n  border: 1px solid #8ad9ff;\n  padding-left: 5px;\n  color: #FFF;\n}", ""]);
+exports.push([module.i, "#danmu[data-v-7ec61d2f] {\n  font-family: \"Avenir\", Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n}\n.stage[data-v-7ec61d2f] {\n  height: 300px;\n  width: 100%;\n  background: #025d63;\n  margin: 0;\n  position: relative;\n  overflow: hidden;\n}\nbody[data-v-7ec61d2f] {\n  background: url(\"http://dzz.lqlovehai.com/index.php?mod=io&op=thumbnail&size=small&path=MmdpaFF1anBKVWpVSHgtN0NOeW0xZnZfRkNPU3l6N3RGUnhxSE9XbmxOSGpIZVVoRmNZUjh0WkhGMlA3UXBOazRpb1B4R1hnWUQ4c1d3\");\n}\nh1[data-v-7ec61d2f], h2[data-v-7ec61d2f] {\n  font-weight: normal;\n}\nul[data-v-7ec61d2f] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-7ec61d2f] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-7ec61d2f] {\n  color: #42b983;\n}\n.baberrage-stage[data-v-7ec61d2f] {\n  z-index: 5;\n}\n.baberrage-stage .baberrage-item.normal[data-v-7ec61d2f] {\n  color: #FFF;\n}\n.top[data-v-7ec61d2f] {\n  border: 1px solid #66aabb;\n}\n.danmu-control[data-v-7ec61d2f] {\n  position: absolute;\n  margin: 0 auto;\n  width: 100%;\n  bottom: 300px;\n  top: 70%;\n  height: 69px;\n  box-sizing: border-box;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n}\n.danmu-control div[data-v-7ec61d2f] {\n  width: 300px;\n  background: rgba(0, 0, 0, 0.6);\n  padding: 15px;\n  border-radius: 5px;\n  border: 2px solid #8ad9ff;\n}\n.danmu-control input[data-v-7ec61d2f], .danmu-control button[data-v-7ec61d2f], .danmu-control select[data-v-7ec61d2f] {\n  height: 35px;\n  padding: 0;\n  float: left;\n  background: #027fbb;\n  border: 1px solid #CCC;\n  color: #FFF;\n  border-radius: 0;\n  width: 18%;\n  box-sizing: border-box;\n}\n.danmu-control select[data-v-7ec61d2f] {\n  height: 33px;\n  margin-top: 1px;\n  border: 0px;\n  outline: 1px solid #cccccc;\n}\n.danmu-control input[data-v-7ec61d2f] {\n  width: 64%;\n  height: 35px;\n  background: rgba(0, 0, 0, 0.7);\n  border: 1px solid #8ad9ff;\n  padding-left: 5px;\n  color: #FFF;\n}", ""]);
 
 // exports
 
